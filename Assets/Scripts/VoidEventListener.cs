@@ -3,34 +3,34 @@ using UnityEngine.Events;
 
 public class VoidEventListener : MonoBehaviour
 {
-    // The Scriptable Object whose UnityAction to listen to
-    public VoidGameEvent VoidGameEvent;
+    /// <summary>
+    /// The ScriptableObject event to listen to.
+    /// </summary>
+    [SerializeField] public VoidGameEvent Event;
+    
+    /// <summary>
+    /// The UnityEvent to invoke when the assigned event is raised.
+    /// </summary>
+    [SerializeField] public UnityEvent OnEventRaised;
 
-    // The UnityEvent attached to this MonoBehaviour.
-    // This acts as an intermediary between the provided UnityAction and the action to take place.
-    public UnityEvent OnEventRaised;
-
-    // Add the listener RaiseEvent() to VoidGameEvent (only if it's null).
     private void OnEnable()
     {
-        if( VoidGameEvent == null )
+        if( Event == null )
         {
             return;
         }
-        VoidGameEvent.EventRaised += RaiseEvent;
+        Event.RegisterListener( this );
     }
 
-    // Remove the listener RaiseEvent() for VoidGameEvent (only if it's null).
     private void OnDisable()
     {
-        if( VoidGameEvent == null )
+        if( Event == null )
         {
             return;
         }
-        VoidGameEvent.EventRaised -= RaiseEvent;    
+        Event.UnregisterListener( this );
     }
-
-    // Invoke the UnityEvent.
+    
     public void RaiseEvent()
     {
         OnEventRaised?.Invoke();
