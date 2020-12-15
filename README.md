@@ -39,7 +39,7 @@ that would invoke their assigned responses
 * A public method from which the UnityEvent will be invoked when the event 
 is triggered
 
-## Setup
+## Demo
 
 ### How to set up the event
 
