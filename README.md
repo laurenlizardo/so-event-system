@@ -1,7 +1,6 @@
 # Implementing an Event System using ScriptableObjects
 
-Source - [Unity.com: Three ways to architect your game with ScriptableObjects](https://unity.com/how-to/architect-game-code-scriptable-objects#architect-events)
-Inspiration - [Unity Open Project: Chop Chop](https://github.com/UnityTechnologies/open-project-1)
+
 
 ## How it works
 
@@ -73,3 +72,7 @@ the empty field under OnClick().
 3. In the editor, select the object containing that MonoBehaviour script
 and drag and drop the desired VoidEvent ScriptableObject from the Assets folder
 into the newly created field.
+
+## Sources
+* [Unity.com: Three ways to architect your game with ScriptableObjects](https://unity.com/how-to/architect-game-code-scriptable-objects#architect-events)
+* [Unity Open Project: Chop Chop](https://github.com/UnityTechnologies/open-project-1)
